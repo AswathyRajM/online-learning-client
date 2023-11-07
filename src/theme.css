@@ -1,6 +1,9 @@
 :root {
-  --primary-bg: #1e90ff;
-  --secondary-bg: #ffffff;
-  --primary-text: #ffffff;
-  --secondary-text: #ffffff;
+  --primary-blue: #000aad;
+  --secondary-blue: #5e91ff;
+  --primary-red: #e12957;
+  --secondary-red: #ff8aad;
+  --text-black: #161616;
+  --text-white: #f3f3f3;
+  --text-grey: #rgb(186, 186, 186);
 }
