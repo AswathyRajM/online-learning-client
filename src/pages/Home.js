@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchInput from '../components/SearchInput';
-import CourseItem from '../components/Course/CourseItem';
+import CourseCard from '../components/Course/CourseCard';
 import { Link } from 'react-router-dom';
 
 function Home() {
@@ -13,18 +13,18 @@ function Home() {
       <div className='w-100 h-fit py-2 md:py-6'>
         <div className='grid m-auto gap-3 md:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
           <Link to='/course-details/1'>
-            <CourseItem />
+            <CourseCard />
           </Link>
-          <CourseItem />
-          <CourseItem />
-          <CourseItem />
-          <CourseItem />
-          <CourseItem />
-          <CourseItem />
-          <CourseItem />
-          <CourseItem />
-          <CourseItem />
-          <CourseItem />
+          <CourseCard />
+          <CourseCard />
+          <CourseCard />
+          <CourseCard />
+          <CourseCard />
+          <CourseCard />
+          <CourseCard />
+          <CourseCard />
+          <CourseCard />
+          <CourseCard />
         </div>
       </div>
     </div>
