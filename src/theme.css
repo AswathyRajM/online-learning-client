@@ -5,5 +5,6 @@
   --secondary-red: #ff8aad;
   --text-black: #161616;
   --text-white: #f3f3f3;
-  --text-grey: #rgb(186, 186, 186);
+  --text-grey: rgb(186, 186, 186);
+  --text-darkGrey: rgb(77, 77, 77);
 }

@@ -7,7 +7,9 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <Pages />
+      <div className='max-w-screen-2xl md:py-7 md:px-20 py-4 px-5 mx-auto'>
+        <Pages />
+      </div>
       <Footer />
     </BrowserRouter>
   );

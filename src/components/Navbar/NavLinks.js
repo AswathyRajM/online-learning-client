@@ -33,14 +33,6 @@ function NavLinks({ isMobile, toggleNavbar }) {
         Dashboard
       </NavLink>
       <hr />
-      {/* <NavLink
-        to='/profile'
-        className={({ isActive }) => (isActive ? linkClassActive : linkClass)}
-        onClick={toggleNavbar}
-      >
-        Profile
-      </NavLink>
-      <hr /> */}
     </>
   );
 }

@@ -10,7 +10,7 @@ function Navbar() {
   return (
     <div className='bg-[var(--primary-blue)] text-[var(--text-white)] shadow-lg'>
       <div className='shadow-xl'>
-        <nav className='max-w-screen-2xl md:py-10 md:px-20 py-5 px-5 mx-auto flex items-center justify-between relative z-50'>
+        <nav className='max-w-screen-2xl md:py-7 md:px-20 py-4 px-5 mx-auto flex items-center justify-between relative z-50'>
           <Logo />
           <div className='flex items-center justify-between w-fit'>
             <div className='hidden md:block'>
@@ -18,7 +18,7 @@ function Navbar() {
                 <NavLinks isMobile={false} />
               </div>
             </div>
-            <div className='flex flex-row-reverse md:flex-row'>
+            <div className='flex flex-row-reverse md:flex-row space-x-2'>
               <div className='-mr-2 flex md:hidden'>
                 <button
                   onClick={toggleNavbar}
@@ -79,7 +79,7 @@ function Navbar() {
                   </div>
                 </Fade>
               </div>
-              <div className='w-fit flex justify-evenly items-center mx-3'>
+              <div className='w-fit flex justify-evenly items-center '>
                 <img className='w-10' src={userImg} alt='User Profile Image' />
                 <div className='hidden ml-1 md:inline-block'>Welcome back!</div>
               </div>
