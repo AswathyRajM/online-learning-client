@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Fade, Slide } from 'react-awesome-reveal';
+import { Fade } from 'react-awesome-reveal';
 import Logo from '../Logo';
 import NavLinks from './NavLinks';
 import userImg from '../../images/user.png';
@@ -8,9 +8,9 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleNavbar = () => setIsOpen(!isOpen);
   return (
-    <div className='bg-[var(--primary-blue)] text-[var(--text-white)] shadow-lg'>
-      <div className='shadow-xl'>
-        <nav className='max-w-screen-2xl md:py-7 md:px-20 py-4 px-5 mx-auto flex items-center justify-between relative z-50'>
+    <div className='bg-[var(--primary-blue)] text-[var(--text-white)] shadow-2xl sticky top-0 z-50'>
+      <div className='shadow-md'>
+        <nav className='max-w-screen-2xl md:py-7 md:px-20 py-3 px-2 mx-auto flex items-center justify-between relative z-50'>
           <Logo />
           <div className='flex items-center justify-between w-fit'>
             <div className='hidden md:block'>

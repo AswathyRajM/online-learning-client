@@ -4,11 +4,25 @@
 
 @layer base {
   h1 {
-    @apply text-2xl;
+    @apply text-3xl;
+    @apply font-bold;
+    @apply pb-2;
   }
   h2 {
-    @apply text-xl;
+    @apply text-lg;
+    @apply font-bold;
   }
+}
+:root {
+  --primary-blue: #000aad;
+  --secondary-blue: #5e91ff;
+  --primary-red: #e12957;
+  --secondary-red: #ff8aad;
+  --text-black: #161616;
+  --text-white: #f3f3f3;
+  --text-grey: rgb(132, 132, 132);
+  --text-darkGrey: rgb(77, 75, 75);
+  --bg: #fafafa;
 }
 
 body {
@@ -31,4 +45,11 @@ code {
   background-size: 1rem 1rem;
   height: 1.2rem;
   width: 1.2rem;
+}
+
+.heading-elipsis {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }

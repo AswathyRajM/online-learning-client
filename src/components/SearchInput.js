@@ -30,23 +30,24 @@ function SearchInput() {
   //   setTimer(newTimer);
   // };
 
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+    }
+  };
+
   return (
-    <form className='flex p-0 m-0 w-[100%] bottom-0 relative'>
-      <span className='py-[0.7rem] pr-[0.2rem] pl-[0.5rem] absolute font-bold text-[var(--text-black)]'>
-        <BsSearch />
-      </span>
+    <form className='flex items-center p-0 m-0 w-[100%] bottom-0 relative'>
       <input
         className='
         flex 
-        pr-[0.25rem] 
+        px-[0.5rem] 
         py-[0.6rem] 
-        pl-[2.5rem] 
         h-[2.5rem] 
         m-0 
         w-[100%] 
         bottom-0 
         text-[var(--text-darkGrey)] 
-        rounded-md 
+        rounded-l-md
         focus:outline-[var(--primary-blue)] 
         focus:outline-2 
         border-[var(--primary-blue)] 
@@ -63,9 +64,18 @@ function SearchInput() {
         // value={searchText}
         onChange={(e) => {
           e.preventDefault();
+          // make sure the search item isnt wempty when calling keypress
           // handleSeahcInputChange(e.target.value);
         }}
+        onKeyDown={(e) => handleKeyPress(e)}
       />
+      <button className='bg-[var(--primary-blue)] rounded-r-md'>
+        <div className='flex relative items-center px-3 py-2 justify-center'>
+          <span className='p-[.5rem] font-bold text-white mr-2 shadow-lg'>
+            <BsSearch />
+          </span>
+        </div>
+      </button>
     </form>
   );
 }
