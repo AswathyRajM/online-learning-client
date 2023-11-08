@@ -2,6 +2,7 @@ import React from 'react';
 import ProgressBar from '@ramonak/react-progress-bar';
 
 function EnrolledCourseCard() {
+  const completed = false;
   return (
     <div>
       <div className='grid pr-4 md:gap-4 grid-rows-2 md:grid-rows-1 md:grid-cols-2 shadow-lg'>
@@ -36,12 +37,17 @@ function EnrolledCourseCard() {
               animateOnRender={true}
             />
           </div>
-          <div className='w-full text-sm flex justify-between my-4  text-white'>
+
+          <div className='w-full text-sm flex justify-between my-4 text-white'>
             <button className='p-2 text-[var(--primary-blue)] rounded-lg shadow-lg border-2 border-[var(--primary-blue)] hover:border-[var(--secondary-blue)] hover:text-[var(--secondary-blue)]'>
-              Mark as Completed
+              {completed ? 'Mark as incomplete' : 'Mark as Completed'}
             </button>
-            <button className='bg-[var(--primary-blue)] p-2 hover:bg-[var(--secondary-blue)] rounded-lg shadow-lg'>
-              Continue Learning
+            <button
+              className={`bg-[var(--primary-blue)] p-2 hover:bg-[var(--secondary-blue)] rounded-lg shadow-lg ${
+                completed && 'px-6'
+              }`}
+            >
+              {completed ? 'Learn again' : 'Continue Learning'}
             </button>
           </div>
         </div>

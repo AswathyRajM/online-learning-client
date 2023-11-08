@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
 import { IoIosArrowDown } from 'react-icons/io';
 
-const Accordion = ({ title, content }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const Accordion = ({ title, content, leftArrow }) => {
+  const [isOpen, setIsOpen] = useState(leftArrow ?? false);
 
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
@@ -12,7 +12,9 @@ const Accordion = ({ title, content }) => {
   return (
     <>
       <div
-        className='flex text-center  bg-gray-100 cursor-pointer z-50  p-2 py-2'
+        className={`flex text-center bg-gray-100 cursor-pointer z-50 rounded-t-xl  p-2 py-2 ${
+          leftArrow && 'flex-row-reverse'
+        } ${isOpen && 'bg-gray-200'}`}
         onClick={toggleAccordion}
       >
         <span
@@ -20,7 +22,7 @@ const Accordion = ({ title, content }) => {
             isOpen
               ? 'my-auto -rotate-180 duration-150 '
               : 'my-auto duration-150'
-          }`}
+          } ${leftArrow && 'text-2xl'}`}
         >
           <IoIosArrowDown />
         </span>
