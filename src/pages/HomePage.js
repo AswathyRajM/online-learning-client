@@ -3,10 +3,10 @@ import SearchInput from '../components/SearchInput';
 import CourseCard from '../components/Course/CourseCard';
 import { Link } from 'react-router-dom';
 
-function Home() {
+function HomePage() {
   return (
     <div>
-      <div className='w-100 h-fit py-4 md:py-2 px-2 md:p-6 bsg-black rounded-lg shadow-xl bg-gray-100'>
+      <div className='w-100 h-fit py-4 md:py-2 px-2 md:p-6 bsg-black rounded-lg shadow-xl bg-gray-100  text-[var(--text-darkGrey)]'>
         <h1 className='mb-4'>What do you want to learn?</h1>
         <SearchInput />
       </div>
@@ -31,4 +31,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;

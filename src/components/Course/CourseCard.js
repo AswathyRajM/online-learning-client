@@ -7,7 +7,7 @@ function CourseCard() {
         rounded-xl
         w-[100%]
         h-fit
-        md:w-[240px]
+        md:w-[300px]
         max-w-[100%]
         mt-6  
         md:max-w-[240px]
@@ -19,7 +19,7 @@ function CourseCard() {
         text-black
       hover:bg-white'
     >
-      <div className='w-[100%] md:h-[130px] md:w-[240px] relative rounded-t-xl overflow-hidden'>
+      <div className='w-[100%] md:h-[155px] md:w-[300px] relative rounded-t-xl overflow-hidden'>
         <img
           src='https://ik.imagekit.io/aswathy/Alemeno-Online-Courses/images/course4_Jbit8khAw'
           alt='course'

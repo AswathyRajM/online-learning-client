@@ -12,16 +12,30 @@
     @apply text-lg;
     @apply font-bold;
   }
+  h4 {
+    @apply text-base;
+    @apply font-bold;
+    @apply mt-4;
+    @apply mr-4;
+    @apply mb-1;
+  }
+  h5 {
+    @apply text-base;
+    @apply font-bold;
+  }
+  p {
+    @apply text-base;
+  }
 }
 :root {
   --primary-blue: #000aad;
-  --secondary-blue: #5e91ff;
+  --secondary-blue: #020cca;
   --primary-red: #e12957;
   --secondary-red: #ff8aad;
   --text-black: #161616;
   --text-white: #f3f3f3;
   --text-grey: rgb(132, 132, 132);
-  --text-darkGrey: rgb(77, 75, 75);
+  --text-darkGrey: rgb(37, 37, 37);
   --bg: #fafafa;
 }
 
