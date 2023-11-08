@@ -4,11 +4,15 @@
 
 @layer base {
   h1 {
-    @apply text-3xl;
+    @apply text-2xl;
     @apply font-bold;
     @apply pb-2;
   }
   h2 {
+    @apply text-2xl;
+    @apply font-bold;
+  }
+   h3 {
     @apply text-lg;
     @apply font-bold;
   }
@@ -23,13 +27,20 @@
     @apply text-base;
     @apply font-bold;
   }
+  h6 {
+    @apply text-sm;
+    @apply font-bold;
+    @apply mt-4;
+    @apply mr-4;
+    @apply mb-1;
+  }
   p {
     @apply text-base;
   }
 }
 :root {
   --primary-blue: #000aad;
-  --secondary-blue: #020cca;
+  --secondary-blue: #000be3;
   --primary-red: #e12957;
   --secondary-red: #ff8aad;
   --text-black: #161616;

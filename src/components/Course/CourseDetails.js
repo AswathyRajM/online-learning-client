@@ -29,7 +29,7 @@ function CourseDetails() {
               Python
             </h1>
             <div>
-              <h4>Instructor :</h4>
+              <h4>Instructor </h4>
               <p>Jose Portilla</p>
             </div>
             <div>
@@ -80,7 +80,7 @@ function CourseDetails() {
             <img
               src='https://ik.imagekit.io/aswathy/Alemeno-Online-Courses/images/course4_Jbit8khAw'
               alt='course'
-              className='h-[100%] w-[100%] object-center rounded-t-xl overflow-hidden shadow-lg'
+              className='h-[100%] w-[100%] object-cover rounded-t-xl overflow-hidden shadow-lg'
             />
             <div className='mt-4'>
               <button className='bg-[var(--primary-blue)] w-[100%] h-14 hover:bg-[var(--secondary-blue)] text-white font-bold rounded-xl overflow-hidden shadow-lg text-base hover:text-lg duration-75'>

@@ -7,10 +7,10 @@ function CourseCard() {
         rounded-xl
         w-[100%]
         h-fit
-        md:w-[300px]
+        md:w-[290px]
         max-w-[100%]
         mt-6  
-        md:max-w-[240px]
+        md:max-w-[290px]
         overflow-hidden
         mx-auto
         hover:shadow-2xl
@@ -19,17 +19,17 @@ function CourseCard() {
         text-black
       hover:bg-white'
     >
-      <div className='w-[100%] md:h-[155px] md:w-[300px] relative rounded-t-xl overflow-hidden'>
+      <div className='w-[100%] md:h-[165px] md:w-[320px] relative rounded-t-xl overflow-hidden'>
         <img
           src='https://ik.imagekit.io/aswathy/Alemeno-Online-Courses/images/course4_Jbit8khAw'
           alt='course'
-          className='h-[100%] w-[100%] object-center'
+          className='h-[100%] w-[100%] object-cover'
         />
       </div>
       <div className='flex flex-col w-[100%] space-y-1 p-2'>
-        <h2 className='heading-elipsis'>
+        <h3 className='heading-elipsis'>
           The Complete Python Bootcamp From Zero to Hero in Python
-        </h2>
+        </h3>
         <p className='text-[var(--text-grey)] text-sm'>The Complete Python</p>
         <p className='text-base font-medium'>
           $99
