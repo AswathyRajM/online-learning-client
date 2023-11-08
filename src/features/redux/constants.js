@@ -1,4 +1,4 @@
 export const CONSTANTS = {
-  IDLE: 'idle',
-  PENDING: 'pending',
+  IDLE: false,
+  PENDING: true,
 };

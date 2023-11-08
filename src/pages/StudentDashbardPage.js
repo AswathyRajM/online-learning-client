@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import EnrolledCourseCard from '../components/Course/EnrolledCourseCard';
 import { Fade } from 'react-awesome-reveal';
 import Accordion from '../components/Accordion';

@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, current } from '@reduxjs/toolkit';
 import { CONSTANTS } from '../constants';
 import apiClient from '../../endpoint/axiosClient';
 import { handleError } from '../../util/handleApiError';
@@ -14,25 +14,10 @@ const initialState = {
 
 export const fetchAllCourses = createAsyncThunk(
   '/fetchAllCourses',
-  async (page) => {
-    const endpoint = `/courses/getAll?page=${page ?? 1}`;
+  async () => {
+    const endpoint = `/api/course/all`;
     try {
       const response = await apiClient.get(endpoint);
-      console.log(response);
-      return response.data;
-    } catch (e) {
-      return handleError(e, endpoint);
-    }
-  }
-);
-
-export const getCourseDetails = createAsyncThunk(
-  '/getCourseDetails',
-  async (id) => {
-    const endpoint = `/courses/details/${id}`;
-    try {
-      const response = await apiClient.get(endpoint);
-      console.log(response);
       return response.data;
     } catch (e) {
       return handleError(e, endpoint);
@@ -42,12 +27,11 @@ export const getCourseDetails = createAsyncThunk(
 
 export const searchCourses = createAsyncThunk(
   '/searchCourses',
-  async ({ searchTerm, page }) => {
-    const endpoint = `/courses/search?query=${searchTerm}&page=${page ?? 1}`;
+  async (term) => {
+    const endpoint = `/api/course/search?query=${term}`;
 
     try {
       const response = await apiClient.get(endpoint);
-      console.log(response);
       return response.data;
     } catch (e) {
       return handleError(e, endpoint);
@@ -56,18 +40,15 @@ export const searchCourses = createAsyncThunk(
 );
 
 export const courseSlice = createSlice({
-  name: course,
+  name: 'courses',
   initialState,
   reducers: {
     clearCourseDetails: (state) => {
       state.courseDetails = {};
     },
     clearState: (state) => {
-      state.currentPage = 0;
-      state.allCourses = [];
-    },
-    setSearchTerm: (state, action) => {
-      state.searchTerm = action.payload;
+      state.allCourses = state.tempCourses;
+      state.tempCourses = [];
     },
   },
 
@@ -83,19 +64,6 @@ export const courseSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchAllCourses.rejected, (state, action) => {
-        state.loading = IDLE;
-        state.error = action.error.message;
-      })
-      .addCase(getCourseDetails.pending, (state, action) => {
-        state.loading = PENDING;
-        state.error = null;
-      })
-      .addCase(getCourseDetails.fulfilled, (state, action) => {
-        state.loading = IDLE;
-        state.courseDetails = action.payload;
-        state.error = null;
-      })
-      .addCase(getCourseDetails.rejected, (state, action) => {
         state.loading = IDLE;
         state.error = action.error.message;
       })
@@ -115,5 +83,6 @@ export const courseSlice = createSlice({
   },
 });
 
-export const { clearCourseDetails, clearState, setSearchTerm } =
-  courseSlice.actions;
+export const { clearCourseDetails, clearState } = courseSlice.actions;
+
+export default courseSlice.reducer;
