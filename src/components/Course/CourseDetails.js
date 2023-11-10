@@ -15,14 +15,14 @@ function CourseDetails() {
 
   const dispatch = useDispatch();
   const { courseDetails, loading } = useSelector((state) => state.courses);
-  const closed = courseDetails.enrollmentStatus?.toLowerCase() == 'closed';
+  const closed = courseDetails.enrollmentStatus?.toLowerCase() === 'closed';
   useEffect(() => {
     window.scrollTo(0, 0);
     dispatch(fetchCourseDetails(id));
     return () => {
       dispatch(clearCourseDetails());
     };
-  }, []);
+  }, [id]);
 
   return (
     <>

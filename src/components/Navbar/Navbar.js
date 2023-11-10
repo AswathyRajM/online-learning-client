@@ -82,11 +82,7 @@ function Navbar() {
                   </Fade>
                 </div>
                 <div className='w-fit flex justify-evenly items-center '>
-                  <img
-                    className='w-10'
-                    src={userImg}
-                    alt='User Profile Image'
-                  />
+                  <img className='w-10' src={userImg} alt='User Profile' />
                   <div className='hidden ml-1 md:inline-block'>
                     Welcome back!
                   </div>

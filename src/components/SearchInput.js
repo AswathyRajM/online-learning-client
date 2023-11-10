@@ -4,7 +4,7 @@ import {
   fetchAllCourses,
   searchCourses,
 } from '../features/redux/slices/courseSlice';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 function SearchInput() {
   const dispatch = useDispatch();

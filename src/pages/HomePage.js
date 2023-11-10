@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { Fade } from 'react-awesome-reveal';
 import {
   fetchAllCourses,
-  clearState,
 } from '../features/redux/slices/courseSlice';
 import io from 'socket.io-client';
 import { useDispatch, useSelector } from 'react-redux';

@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, current } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { CONSTANTS } from '../constants';
 import apiClient from '../../endpoint/axiosClient';
 import { handleError } from '../../util/handleApiError';
@@ -75,10 +75,6 @@ export const courseSlice = createSlice({
     clearCourseDetails: (state) => {
       state.courseDetails = {};
     },
-    clearState: (state) => {
-      state.allCourses = state.tempCourses;
-      state.tempCourses = [];
-    },
   },
 
   extraReducers: (builder) => {
@@ -137,6 +133,6 @@ export const courseSlice = createSlice({
   },
 });
 
-export const { clearCourseDetails, clearState } = courseSlice.actions;
+export const { clearCourseDetails } = courseSlice.actions;
 
 export default courseSlice.reducer;

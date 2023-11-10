@@ -29,6 +29,7 @@ function StudentDashbardPage() {
                       studentDetails.inProgressCourses.map((course) => {
                         if (course.progress < 100)
                           return <EnrolledCourseCard course={course} />;
+                        return <></>;
                       })
                     ) : (
                       <div>Nothing to Show</div>
@@ -49,6 +50,7 @@ function StudentDashbardPage() {
                       studentDetails.completedCourses.map((course) => {
                         if (course.progress === 100)
                           return <EnrolledCourseCard course={course} />;
+                        return <></>
                       })
                     ) : (
                       <div>Nothing to Show</div>
