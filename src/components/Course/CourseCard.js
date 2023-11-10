@@ -23,8 +23,8 @@ function CourseCard({ course }) {
       </div>
       <div className='flex flex-col w-[100%] space-y-1 p-2'>
         <h3 className='heading-elipsis'>{name}</h3>
-        <p className='text-[var(--text-grey)] text-sm'>{instructor}</p>
-        <p className='text-[var(--text-grey)] text-sm w-full'>
+        <p className='text-[var(--text-gray)] text-sm'>{instructor}</p>
+        <p className='text-[var(--text-gray)] text-sm w-full'>
           {likes} Likes
           <span
             className={`float-right delay-100  transition-all text-2xl ${
@@ -40,7 +40,7 @@ function CourseCard({ course }) {
         </p>
         <p className='text-base font-medium'>
           {price}
-          <span className='text-[var(--text-grey)] line-through ml-2 '>
+          <span className='text-[var(--text-gray)] line-through ml-2 '>
             $199
           </span>
         </p>

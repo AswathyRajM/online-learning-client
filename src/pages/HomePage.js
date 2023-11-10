@@ -29,7 +29,7 @@ function HomePage() {
 
   return (
     <div>
-      <div className='w-100 h-fit py-4 md:py-2 px-2 md:p-6 rounded-lg shadow-xl bg-gray-100  text-[var(--text-darkGrey)]'>
+      <div className='w-100 h-fit py-4 md:py-2 px-2 md:p-6 rounded-lg shadow-xl bg-gray-100  text-[var(--text-darkGray)]'>
         <h1 className='mb-4'>What do you want to learn?</h1>
         <SearchInput />
       </div>

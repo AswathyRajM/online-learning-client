@@ -39,12 +39,10 @@
 :root {
   --primary-blue: #000aad;
   --secondary-blue: #000be3;
-  --primary-red: #e12957;
-  --secondary-red: #ff8aad;
   --text-black: #161616;
   --text-white: #f3f3f3;
-  --text-grey: rgb(132, 132, 132);
-  --text-darkGrey: rgb(37, 37, 37);
+  --text-gray: rgb(132, 132, 132);
+  --text-darkGray: rgb(37, 37, 37);
   --bg: #fafafa;
 }
 

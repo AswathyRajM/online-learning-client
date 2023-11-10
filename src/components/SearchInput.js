@@ -42,7 +42,7 @@ function SearchInput() {
         m-0 
         w-[100%] 
         bottom-0 
-        text-[var(--text-darkGrey)] 
+        text-[var(--text-darkGray)] 
         rounded-l-md
         focus:outline-[var(--primary-blue)] 
         focus:outline-2 
@@ -51,7 +51,7 @@ function SearchInput() {
         outline 
         outline-offset-2 
         outline-1
-        outline-[var(--text-grey)]'
+        outline-[var(--text-gray)]'
         data-testid='search-input'
         aria-label='Search'
         type='search'
