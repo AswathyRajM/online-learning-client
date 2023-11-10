@@ -41,15 +41,6 @@ export const updateCourseStatus = createAsyncThunk(
 export const studentSlice = createSlice({
   name: 'students',
   initialState,
-  reducers: {
-    // clearStudentDetails: (state) => {
-    //   state.courseDetails = {};
-    // },
-    // clearState: (state) => {
-    //   state.studentDetails = state.tempCourses;
-    //   state.tempCourses = [];
-    // },
-  },
 
   extraReducers: (builder) => {
     builder
@@ -80,7 +71,5 @@ export const studentSlice = createSlice({
       });
   },
 });
-
-// export const { clearCourseDetails, clearState } = studentSlice.actions;
 
 export default studentSlice.reducer;
