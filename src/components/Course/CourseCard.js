@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
-//  socket.emit('send_message', { username, room, message, __createdtime__ });
-//  setMessage('');
 import { IoMdHeartEmpty, IoMdHeart } from 'react-icons/io';
+import { useDispatch } from 'react-redux';
+import { updateCourseLike } from '../../features/redux/slices/courseSlice';
 
 function CourseCard({ course }) {
-  const { name, instructor, thumbnail, likes, price } = course;
+  const dispatch = useDispatch();
+  const { name, instructor, thumbnail, likes, price, _id } = course;
   const [liked, setLiked] = useState(false);
 
+  const handleLike = () => {
+    setLiked(!liked);
+    dispatch(updateCourseLike({ _id, likes: likes + 1 }));
+  };
   return (
-    <div className='rounded-xl w-[100%] h-fit md:w-[290px] max-w-[100%] mt-6 md:max-w-[290px] overflow-hidden mx-auto hover:shadow-2xl cursor-pointer shadow-xl text-black hover:bg-white'>
+    <div className='border-2 rounded-xl w-[100%] h-fit md:w-[290px] max-w-[100%] mt-6 md:max-w-[290px] overflow-hidden mx-auto hover:shadow-2xl cursor-pointer shadow-xl text-black hover:bg-white'>
       <div className='w-[100%] md:h-[165px] md:w-[320px] relative rounded-t-xl overflow-hidden'>
         <img
           src={thumbnail}
@@ -27,7 +32,7 @@ function CourseCard({ course }) {
             }`}
             onClick={(e) => {
               e.preventDefault();
-              setLiked(!liked);
+              handleLike();
             }}
           >
             {liked ? <IoMdHeart /> : <IoMdHeartEmpty />}

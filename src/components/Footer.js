@@ -3,9 +3,9 @@ import Logo from './Logo';
 
 function Footer() {
   return (
-    <div className='w-100 bg-black '>
-      <div className='h-fit max-w-screen-2xl md:py-7 md:px-20 py-3 px-2 mx-auto'>
-        <Logo />
+    <div className='bg-gray-100 border-t-2 flex items-center justify-center '>
+      <div className='text-center md:py-7 py-3'>
+        @{new Date().getFullYear()} Edufy
       </div>
     </div>
   );

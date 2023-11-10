@@ -12,15 +12,13 @@
     @apply text-2xl;
     @apply font-bold;
   }
-   h3 {
+  h3 {
     @apply text-lg;
     @apply font-bold;
   }
   h4 {
     @apply text-base;
     @apply font-bold;
-    @apply mt-4;
-    @apply mr-4;
     @apply mb-1;
   }
   h5 {

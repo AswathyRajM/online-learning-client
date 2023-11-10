@@ -12,6 +12,20 @@ const initialState = {
   error: null,
 };
 
+export const fetchCourseDetails = createAsyncThunk(
+  '/fetchCourseDetails',
+  async (id) => {
+    const endpoint = `/api/course/${id}`;
+    console.log(id);
+    try {
+      const response = await apiClient.get(endpoint);
+      return response.data;
+    } catch (e) {
+      return handleError(e, endpoint);
+    }
+  }
+);
+
 export const fetchAllCourses = createAsyncThunk(
   '/fetchAllCourses',
   async () => {
@@ -39,6 +53,21 @@ export const searchCourses = createAsyncThunk(
   }
 );
 
+export const updateCourseLike = createAsyncThunk(
+  '/updateCourseLike',
+  async (args, { dispatch }) => {
+    const endpoint = `/api/course/addLike`;
+
+    try {
+      const response = await apiClient.patch(endpoint, args);
+      dispatch(fetchAllCourses());
+      return response.data;
+    } catch (e) {
+      return handleError(e, endpoint);
+    }
+  }
+);
+
 export const courseSlice = createSlice({
   name: 'courses',
   initialState,
@@ -54,6 +83,18 @@ export const courseSlice = createSlice({
 
   extraReducers: (builder) => {
     builder
+      .addCase(updateCourseLike.pending, (state, action) => {
+        state.loading = PENDING;
+        state.error = null;
+      })
+      .addCase(updateCourseLike.fulfilled, (state, action) => {
+        state.loading = IDLE;
+        state.error = null;
+      })
+      .addCase(updateCourseLike.rejected, (state, action) => {
+        state.loading = IDLE;
+        state.error = action.error.message;
+      })
       .addCase(fetchAllCourses.pending, (state, action) => {
         state.loading = PENDING;
         state.error = null;
@@ -77,6 +118,19 @@ export const courseSlice = createSlice({
         state.error = null;
       })
       .addCase(searchCourses.rejected, (state, action) => {
+        state.loading = IDLE;
+        state.error = action.error.message;
+      })
+      .addCase(fetchCourseDetails.pending, (state, action) => {
+        state.loading = PENDING;
+        state.error = null;
+      })
+      .addCase(fetchCourseDetails.fulfilled, (state, action) => {
+        state.loading = IDLE;
+        state.courseDetails = action.payload;
+        state.error = null;
+      })
+      .addCase(fetchCourseDetails.rejected, (state, action) => {
         state.loading = IDLE;
         state.error = action.error.message;
       });

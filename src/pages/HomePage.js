@@ -16,9 +16,12 @@ const socket = io.connect(process.env.REACT_APP_SERVER_URL);
 function HomePage() {
   const dispatch = useDispatch();
   const { allCourses, loading } = useSelector((state) => state.courses);
+
   useEffect(() => {
     dispatch(fetchAllCourses());
-    socket.on('course_liked', (arg) => {});
+    socket.on('course_liked', (arg) => {
+      dispatch(fetchAllCourses());
+    });
     return () => {
       socket.disconnect();
     };

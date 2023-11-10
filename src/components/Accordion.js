@@ -20,8 +20,8 @@ const Accordion = ({ title, content, leftArrow }) => {
         <span
           className={`${
             isOpen
-              ? 'my-auto -rotate-180 duration-150 '
-              : 'my-auto duration-150'
+              ? 'my-auto -rotate-180 duration-150 capitalize '
+              : 'my-auto duration-150 capitalize'
           } ${leftArrow && 'text-2xl'}`}
         >
           <IoIosArrowDown />

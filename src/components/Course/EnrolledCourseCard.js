@@ -1,55 +1,61 @@
 import React from 'react';
 import ProgressBar from '@ramonak/react-progress-bar';
+import { useDispatch } from 'react-redux';
+import { updateCourseStatus } from '../../features/redux/slices/studentSlice';
 
-function EnrolledCourseCard() {
-  const completed = false;
+function EnrolledCourseCard({ course }) {
+  const dispatch = useDispatch();
+  const { progress, courseId, due } = course;
+
+  const handleCourseStatusUpdate = () => {
+    let newProgress;
+    if (progress === 100) {
+      newProgress = 0;
+    } else newProgress = 100;
+    dispatch(
+      updateCourseStatus({ courseId: courseId._id, progress: newProgress })
+    );
+  };
   return (
-    <div>
-      <div className='grid pr-4 md:gap-4 grid-rows-2 md:grid-rows-1 md:grid-cols-2 shadow-lg'>
-        <div className='w-[100%] md:w-[290px] relative rounded-l-xl overflow-hidden'>
-          <img
-            src='https://ik.imagekit.io/aswathy/Alemeno-Online-Courses/images/course4_Jbit8khAw'
-            alt='course'
-            className='h-[100%] w-[100%] object-cover'
+    <div className='grid border-2 rounded-xl overflow-hidden grid-rows-2 md:grid-rows-1 md:grid-cols-2 shadow-lg relative'>
+      <div className='w-[100%] md:w-[100%] relative rounded-t-xl md:rounded-none md:rounded-l-xl overflow-hidden'>
+        <img
+          src={courseId.thumbnail}
+          alt='course'
+          className='h-[100%] w-[100%] object-cover'
+        />
+      </div>
+      <div className='p-4 '>
+        <h4 className='heading-elipsis'>{courseId.name}</h4>
+        <div className='flex items-center -mt-3 '>
+          <h6>Instructor :</h6>
+          <p className='capitalize mt-4 text-sm'>{courseId.instructor}</p>
+        </div>
+        <div className='flex items-center mb-4 -mt-3 '>
+          <h6>Due Date :</h6>
+          <p className='capitalize mt-4  text-sm'>{due}</p>
+        </div>
+        <hr />
+        <div className='w-full'>
+          <h6>Progress</h6>
+          <ProgressBar
+            completed={progress}
+            bgColor='green'
+            animateOnRender={true}
+            labelAlignment='outside'
+            labelColor='green'
+            labelSize='14px'
+            dir='auto'
           />
         </div>
-        <div>
-          <h4 className='heading-elipsis'>
-            The Complete Python Bootcamp From Zero to Hero in Bootcamp From Zero
-            to Hero in Bootcamp From Zero to Hero in Bootcamp From Zero to Hero
-            in Python
-          </h4>
-          <div className='flex items-center -mt-3 '>
-            <h6>Instructor :</h6>
-            <p className='capitalize mt-4 text-sm'>Jose Portilla</p>
-          </div>
-          <div className='flex items-center -mt-3 '>
-            <h6>Due Date :</h6>
-            <p className='capitalize mt-4 text-sm'>11-10-2023</p>
-          </div>
-          <hr />
-          <div className='w-full -mt-3'>
-            <h6>Progress</h6>
-            <ProgressBar
-              className='w-[90%]'
-              completed={50}
-              bgColor='green'
-              animateOnRender={true}
-            />
-          </div>
 
-          <div className='w-full text-sm flex justify-between my-4 text-white'>
-            <button className='p-2 text-[var(--primary-blue)] rounded-lg shadow-lg border-2 border-[var(--primary-blue)] hover:border-[var(--secondary-blue)] hover:text-[var(--secondary-blue)]'>
-              {completed ? 'Mark as incomplete' : 'Mark as Completed'}
-            </button>
-            <button
-              className={`bg-[var(--primary-blue)] p-2 hover:bg-[var(--secondary-blue)] rounded-lg shadow-lg ${
-                completed && 'px-6'
-              }`}
-            >
-              {completed ? 'Learn again' : 'Continue Learning'}
-            </button>
-          </div>
+        <div className='w-full text-sm  mt-4 text-white '>
+          <button
+            className='p-2 text-[var(--primary-blue)] rounded-lg shadow-lg border-2 border-[var(--primary-blue)] hover:border-[var(--secondary-blue)] hover:text-[var(--secondary-blue)] w-fit '
+            onClick={handleCourseStatusUpdate}
+          >
+            {progress === 100 ? 'Learn Again' : 'Mark as Complete'}
+          </button>
         </div>
       </div>
     </div>
