@@ -2,7 +2,7 @@
   "name": "online-courses-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://online-learning-server-lyart.vercel.app",
+  "proxy": "https://online-learning-server-jet.vercel.app/",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@ramonak/react-progress-bar": "^5.0.3",
