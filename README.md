@@ -53,7 +53,7 @@ In this assignment, I have developed a React web application to fulfill the give
 2. Navigate to the project directory:
 
    ```bash
-   cd react-assignment
+   cd online-learning-client
    ```
 
 3. Install dependencies:
